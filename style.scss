@@ -1,0 +1,248 @@
+// imports-start
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@mixin main($main1,$main2){
+    #{$main1}:$main2;
+}
+// imports-end
+// colors-variables-start
+$black:black;
+$white:white;
+$darkgreen:#00302E;
+$grey:#FFFFFFBD;
+$gold:#FBDDBB;
+$darkblue:#0B0D17;
+// colors-end
+// to links-code
+%link{
+    @include main(margin-right, 45px);
+    @include main(color, $gold);
+    @include main(font-size, 21px);
+    @include main(font-weight, 500);
+}
+// to links 
+// to button code
+%button{
+    @include main(color, $black);
+    @include main(border-radius, 7px);
+    @include main(padding, 10px 38px);
+    @include main(font-size, 17px);
+    @include main(font-weight, 600);
+    @include main(background-color, $gold);
+    @include main(border, 2px solid transparent);
+    @include main(transition, all .5s ease );
+}
+%button-hover{
+    @include main(background-color, $darkgreen);
+    @include main(color, $gold);
+    @include main(border, 2px solid $gold);
+}
+// button code
+// main-tegs-start
+*{
+    @include main(padding, 0px);
+    @include main(margin,0px );
+    @include main(text-decoration, none);
+    @include main(box-sizing, border-box);
+    @include main(list-style, none);
+    @include main(color, $white);
+    @include main(font-family, "Poppins" );
+}
+body{
+    @include main(background-color, $darkgreen);
+}
+.container-main{
+    @include main(max-width, 1260px);
+    @include main(margin, 0px auto);
+}
+// main-tegs-end
+// header-start
+.header{
+    @include main(margin-top, 59px);
+    &-container1{
+        @include main(margin-bottom, 161px);
+        @include main(display, flex);
+        @include main(align-items, center);
+    }
+    &-logo{
+        @include main(max-width, 57.48px);
+        @include main(max-height, 67px);
+        @include main(margin-right, 22.52px);
+    }
+    &-logo-text{
+        @include main(font-size, 36px);
+        @include main(font-weight, 700);
+    }
+    &-links{
+        @include main(margin-left, 720px);
+    }
+    &-link1{
+        @extend %link;
+    }
+    &-link2{
+        @extend %link;
+        @include main(color, $white);
+    }
+    &-button{
+        @extend %button;
+        &:hover{
+            @extend %button-hover;
+        }
+    }
+    &-container2{
+        @include main(display, flex);
+        @include main(margin-bottom, 180px);
+    }
+    &-h1{
+        @include main(font-size, 64px);
+        @include main(font-weight, 500);
+        @include main(max-width, 650px);
+        @include main(line-height, 77px);
+        @include main(margin-bottom, 21px);
+    }
+    &-span1{
+        @include main(color, $gold);
+    }
+    &-p1{
+        @include main(font-size, 18px);
+        @include main(font-weight, 400);
+        @include main(color, $grey);
+        @include main(max-width, 609px);
+        @include main(line-height, 33px);
+        @include main(margin-bottom, 21px);
+    }
+    &-container2-img1{
+        @include main(margin-right, 12px);
+    }
+    &-container2-box2{
+        @include main(margin-left, 156px);
+        @include main(margin-top, -70px);
+    }
+}
+// header-end
+// section-start
+.section{
+    &-h1{
+        @include main(text-align, center);
+        @include main(font-size, 36px);
+        @include main(font-weight, 700);
+        @include main(margin-bottom, 36px);
+    }
+    &-p1{
+        @include main(max-width, 609px);
+        @include main(margin, 0px auto);
+        @include main(margin-bottom, 96px);
+        @include main(text-align, center);
+        @include main(font-size, 18px);
+        @include main(font-weight, 400);
+        @include main(line-height, 33px);
+    }
+    &-container1-box{
+        @include main(margin-bottom, 269px);
+        @include main(justify-content, space-between);
+        @include main(display, flex);
+        img{
+            @include main(margin-bottom, 35px);
+        }
+        h1{
+            @include main(color, $gold);
+            @include main(margin-left, 80px);
+        }
+        p{
+            @include main(max-width, 288px);
+            @include main(text-align, center);
+        }
+    }
+    &-container1-box-box1{
+        h1{
+            @include main(margin-left, 50px);
+        }
+        p{
+            @include main(margin-left, -10px);
+        }
+    }
+    &-container2{
+        @include main(display, flex);
+        @include main(margin-bottom, 201px);
+    }
+    &-container2-box1{
+        h1{
+            @include main(color, $gold);
+            @include main(font-size, 36px);
+            @include main(font-weight, 700);
+            @include main(margin-bottom, 32px);
+            @include main(max-width, 549px);    
+        }
+        p{
+            @include main(max-width, 531px);
+            @include main(color,$grey );
+            @include main(font-weight, 400);
+            @include main(font-size, 18px);
+        }
+    }
+    &-container2-box2{
+        @include main(display,flex );
+        @include main(align-items, center);
+        @include main(margin-left, 180px);
+        input{
+            @include main(width, 299px);
+            @include main(height, 51px);
+            @include main(border-radius, 5px);
+            @include main(outline, none);
+            @include main(border, none);
+            @include main(color, $gold);
+            @include main(padding-left, 16px);
+        }
+        input::placeholder{
+            @include main(color,#B2B2B2);
+        }
+        button{
+            @extend %button;
+            @include main(padding, 13px 40px);
+            @include main(margin-left, 8px);
+            &:hover{
+                @extend %button-hover;
+            }
+        }
+    }
+}
+// section-end
+// footer-start
+.footer{
+    @include main(background-color, $darkblue);
+    @include main(padding-top, 64px);
+    &-container-main{
+        @include main(margin-bottom, 64px);
+        @include main(max-width, 1150px);
+        @include main(display, flex);
+        @include main(justify-content, space-between);
+        @include main(margin,0px auto );
+        h1{
+            @include main(font-size, 18px);
+            @include main(font-weight, 500);
+            @include main(margin-bottom, 24px);
+        }
+        p{
+            @include main(font-size, 14px);
+            @include main(font-weight, 400);
+            @include main(margin-bottom, 12px);
+        }
+    }
+    &-img1{
+        @include main(margin-bottom, 16px);
+    }
+    &-container1{
+        @include main(margin-top, 64px);
+        hr{
+            @include main(color, #FFFFFF);
+            @include main(height, 1px);
+        }
+    }
+    &-container-boxes{
+        @include  main(display, flex);
+        @include main(margin-top, 28px);
+    }
+    &-container-icons{
+        @include main(margin-left, 725px);
+    }
+}
+// footer-end
